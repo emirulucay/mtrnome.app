@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        spaceB: {
+          50: '#202033',
+          100: '#14152B',
+          500: '#4E57FF',
+          900: '#080817',
+        }
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
