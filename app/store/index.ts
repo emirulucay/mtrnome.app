@@ -1,3 +1,4 @@
+"use client";
 import { configureStore } from "@reduxjs/toolkit";
 import metronomeReducer from "./metronomeSlice";
 

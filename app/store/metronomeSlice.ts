@@ -1,3 +1,4 @@
+"use client";
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
@@ -13,23 +14,23 @@ const initialState: metronomeState = {
   emphasizeFirstKick: false,
 };
 
-export const counterSlice = createSlice({
-  name: "counter",
+export const metronomeSlice = createSlice({
+  name: "metronome",
   initialState,
   reducers: {
     setBpm: (state, action: PayloadAction<number>) => {
       state.bpm = action.payload;
     },
-    togglePlay: (state) => {
-      state.isPlaying = !state.isPlaying;
-    },
-    toggleFirstKick: (state) => {
-      state.emphasizeFirstKick = !state.emphasizeFirstKick;
-    },
+    // togglePlay: (state) => {
+    //   state.isPlaying = !state.isPlaying;
+    // },
+    // toggleFirstKick: (state) => {
+    //   state.emphasizeFirstKick = !state.emphasizeFirstKick;
+    // },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setBpm, togglePlay, toggleFirstKick } = counterSlice.actions;
+export const { setBpm } = metronomeSlice.actions;
 
-export default counterSlice.reducer;
+export default metronomeSlice.reducer;
