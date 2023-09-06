@@ -26,4 +26,38 @@
   .space-gradient {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.05) 100%);
   }
+
+  .space-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .space-slider::-webkit-slider-runnable-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
+  }
+
+  .space-slider::-moz-range-track {
+    height: 15px;
+    background: #ccc;
+    border-radius: 16px;
+  }
+
+  .space-slider::-webkit-slider-thumb {
+    @apply appearance-none w-6 h-6 bg-white rounded-full shadow-[-407px_0_0_400px] shadow-spaceB-500;
+  }
+
+  .space-slider::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: -407px 0 0 400px #f50;
+  }
 }

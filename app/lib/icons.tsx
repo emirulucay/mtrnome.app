@@ -29,3 +29,20 @@ export function Check(props: any) {
     </svg>
   );
 }
+
+export function Minus(props: any) {
+  return (
+    <svg {...props} width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6.13061 15.5H23.1375" stroke="currentColor" strokeWidth="1.82216" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function Plus(props: any) {
+  return (
+    <svg {...props} width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M15.366 6.99657V24.0034" stroke="currentColor" strokeWidth="1.82216" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.86253 15.5H23.8694" stroke="currentColor" strokeWidth="1.82216" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
