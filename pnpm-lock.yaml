@@ -57,6 +57,11 @@ dependencies:
     specifier: 5.2.2
     version: 5.2.2
 
+devDependencies:
+  '@types/howler':
+    specifier: ^2.2.8
+    version: 2.2.8
+
 packages:
 
   /@aashutoshrathi/word-wrap@1.2.6:
@@ -527,6 +532,10 @@ packages:
       '@types/react': 18.2.21
       hoist-non-react-statics: 3.3.2
     dev: false
+
+  /@types/howler@2.2.8:
+    resolution: {integrity: sha512-7OK+cGHTWIDCOvBlEc61Lzj2tJhCpmeqiqdeNbZvTxLHluBMF6xz/2wjoQkK1M8mJIStp40OdPnkp8xIvwwsuw==}
+    dev: true
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
