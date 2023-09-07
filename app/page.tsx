@@ -7,10 +7,11 @@ import SpaceSlider from "./components/SpaceSlider";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/app/store";
 import { setBpm } from "./store/metronomeSlice";
+import Player from "./components/Player";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const { bpm } = useSelector((state: RootState) => state.metronomeReducer);
+  const { bpm, isPlaying } = useSelector((state: RootState) => state.metronomeReducer);
   return (
     <>
       <Header />
@@ -19,6 +20,10 @@ export default function Home() {
           <div className="flex flex-col items-center">
             <span className="text-white/30 text-xs">PROGRESS</span>
             <span className="text-[21px] text-white font-medium">001. 1</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="text-white/30 text-xs">is playing</span>
+            <span className="text-[21px] text-white font-medium">{isPlaying.toString()}</span>
           </div>
           <div className="flex flex-col">
             <span className="text-white/30 text-xs">PBM</span>
@@ -49,6 +54,9 @@ export default function Home() {
         </div>
         <div className="flex items-center mt-8 px-4">
           <SpaceSlider />
+        </div>
+        <div className=" mt-8">
+          <Player />
         </div>
       </div>
     </>

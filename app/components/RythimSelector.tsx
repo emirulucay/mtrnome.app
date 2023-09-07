@@ -3,10 +3,14 @@ import React, { ReactHTMLElement, ReactNode } from "react";
 import { useState, useRef, useEffect } from "react";
 import { DownArrow, Check } from "../lib/icons";
 import cx from "classnames";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState } from "@/app/store";
+import { setRythim } from "../store/metronomeSlice";
 
 export default function RythimSelector() {
+  const dispatch = useDispatch();
+  const { rythim } = useSelector((state: RootState) => state.metronomeReducer);
   const rythims = ["3/4", "4/4", "4/8", "5/8", "6/8", "8/8", "9/8"];
-  const [rythim, setRythim] = useState<string>("4/4");
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const menuButton = useRef<any>();
@@ -27,7 +31,7 @@ export default function RythimSelector() {
   }, [isOpen]);
 
   function setRythimAndClose(r: string) {
-    setRythim(r);
+    dispatch(setRythim(r));
     return setIsOpen(false);
   }
 
