@@ -11,7 +11,7 @@ import Player from "./components/Player";
 
 export default function Home() {
   const dispatch = useDispatch();
-  const { bpm, isPlaying, process } = useSelector((state: RootState) => state.metronomeReducer);
+  const { bpm, process } = useSelector((state: RootState) => state.metronomeReducer);
   return (
     <>
       <Header />
@@ -22,10 +22,6 @@ export default function Home() {
             <span className="text-[21px] text-white font-medium">
               {process.main}. {process.decimal}
             </span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-white/30 text-xs">is playing</span>
-            <span className="text-[21px] text-white font-medium">{isPlaying.toString()}</span>
           </div>
           <div className="flex flex-col">
             <span className="text-white/30 text-xs">PBM</span>
