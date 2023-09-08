@@ -6,8 +6,32 @@ import { Providers } from "@/app/store/provider";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Simple, easy and open-source metronome app.",
+  title: "Simply beautiful, awesome and open-source metronome app.",
   description: "Simple metronome for musicians with great user experience and gorgeus interface.",
+  openGraph: {
+    type: "website",
+    title: "Simply beautiful, awesome and open-source metronome app.",
+    url: "https://mtronome.app",
+    description: "Simple metronome for musicians with great user experience and gorgeus interface.",
+    images: "/og.jpg",
+  },
+  alternates: {
+    canonical: "https://mtronome.app",
+  },
+  applicationName: "mtronome.app",
+  robots: {
+    follow: true,
+    index: true,
+    googleBot: {
+      follow: true,
+      index: true,
+    },
+  },
+  twitter: {
+    images: "/og.jpg",
+    title: "Simply beautiful, awesome and open-source metronome app.",
+    description: "Simple metronome for musicians with great user experience and gorgeus interface.",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
