@@ -5,13 +5,14 @@
 
 @layer base {
   body {
-    @apply bg-spaceB-900 relative min-h-screen overflow-x-hidden tracking-[-0.035em];
+    @apply bg-spaceB-900 relative min-h-screen overflow-x-hidden tracking-[-0.035em] tracking-[-0.02em];
   }
 
   body::before {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full -z-10;
     content: '';
-    background: radial-gradient(50% 50% at 50% 50%, rgba(107, 149, 255, 0.15) 0%, rgba(61, 85, 145, 0.00) 100%);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(107, 149, 255, 0.15) 0%, rgba(61, 85, 145, 0.00) 100%),
+      url('../public/stars.svg');
   }
 }
 
@@ -25,6 +26,11 @@
 
   .space-gradient {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.05) 100%);
+    transition: all .3s;
+  }
+
+  .space-gradient:hover {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.09) 100%);
   }
 
   .space-slider {

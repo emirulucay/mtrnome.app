@@ -46,7 +46,7 @@ export default function RythimSelector() {
       <ul
         ref={menuList}
         className={cx(
-          "absolute top-10 backdrop-blur -left-[55px] space-gradient w-[164px] border border-spaceB-50 flex flex-col p-2 rounded-xl z-10 transition-all duration-300",
+          "absolute top-10 backdrop-blur bg-spaceB-100/80 sm:space-gradient -left-[110px] sm:-left-[55px] w-[164px] border border-spaceB-50 flex flex-col p-2 rounded-xl z-10 transition-all duration-300",
           {
             "pointer-events-none opacity-0 -translate-y-1": !isOpen,
           }

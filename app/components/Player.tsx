@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Play } from "../lib/icons";
+import { Play, Stop } from "../lib/icons";
 import { useSelector, useDispatch } from "react-redux";
 import { setIsPlaying, setEmphasize, setProcess } from "../store/metronomeSlice";
 import type { RootState } from "@/app/store";
@@ -70,10 +70,10 @@ export default function Player() {
 
   return (
     <div className="flex flex-col gap-4 items-center">
-      <button onClick={() => handleClick()} className="bg-spaceB-500 rounded-full p-4 text-white">
-        {isPlaying ? "Pause" : <Play />}
+      <button onClick={() => handleClick()} className="bg-spaceB-500 rounded-full p-4 text-white mt-4">
+        {isPlaying ? <Stop /> : <Play />}
       </button>
-      <div className="flex items-center gap-6 mt-8">
+      <div className="flex items-center gap-6 mt-10">
         {Array(+rythim[0])
           .fill(true)
           .map((item, index) => (
