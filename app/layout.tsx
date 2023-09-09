@@ -11,14 +11,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     title: "Simply beautiful, awesome and open-source metronome app.",
-    url: "https://mtronome.app",
+    url: "https://mtrnome.app",
     description: "Simple metronome for musicians with great user experience and gorgeus interface.",
     images: "/og.jpg",
   },
   alternates: {
-    canonical: "https://mtronome.app",
+    canonical: "https://mtrnome.app",
   },
-  applicationName: "mtronome.app",
+  applicationName: "mtrnome.app",
   robots: {
     follow: true,
     index: true,
