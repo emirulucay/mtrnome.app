@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="mx-auto max-w-[420px] flex flex-col mt-12 px-2 sm:px-0">
+      <div className="mx-auto max-w-[420px] flex flex-col mt-6 sm:mt-12 px-2 sm:px-0">
         <div className="flex items-center justify-between px-2 border-b border-spaceB-50 pb-1">
           <div className="flex flex-col items-center">
             <span className="text-white/30 text-xs">PROGRESS</span>
@@ -34,7 +34,7 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <div className="flex items-center justify-center gap-10 mt-12">
+        <div className="flex items-center justify-center gap-6 sm:gap-10 mt-12">
           <button
             onClick={() => dispatch(setBpm(bpm - 1))}
             className="flex items-center p-2 rounded-full border border-spaceB-50 space-gradient hover:opacity-80 transition duration-300">

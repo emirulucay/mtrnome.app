@@ -73,14 +73,18 @@ export default function Player() {
       <button onClick={() => handleClick()} className="bg-spaceB-500 rounded-full p-4 text-white mt-4">
         {isPlaying ? <Stop /> : <Play />}
       </button>
-      <div className="flex items-center gap-6 mt-10">
+      <div
+        className={cx("flex items-center gap-4 sm:gap-6 mt-10", {
+          "!gap-3": +rythim[0] > 5,
+        })}>
         {Array(+rythim[0])
           .fill(true)
           .map((item, index) => (
             <div
               key={index}
-              className={cx("w-8 h-8 bg-spaceB-700 rounded-full", {
+              className={cx("w-6 h-6 sm:w-8 sm:h-8 bg-spaceB-700 rounded-full", {
                 "!bg-spaceB-500": process.decimal >= index + 1,
+                "!w-5 !h-5": +rythim[0] > 5,
               })}></div>
           ))}
       </div>

@@ -6,6 +6,7 @@
 @layer base {
   body {
     @apply bg-spaceB-900 relative min-h-screen overflow-x-hidden tracking-[-0.035em] tracking-[-0.02em];
+    -webkit-tap-highlight-color: transparent;
   }
 
   body::before {
