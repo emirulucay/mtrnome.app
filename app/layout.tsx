@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import { Providers } from "@/app/store/provider";
+import Script from "next/script";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -37,6 +38,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-E7H42NB1PE"></Script>
+        <Script id="google-analytics">
+          {`          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-E7H42NB1PE');`}
+        </Script>
+      </head>
       <body className={dmSans.className}>
         <Providers>{children}</Providers>
       </body>
