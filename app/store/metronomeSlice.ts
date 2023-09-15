@@ -18,7 +18,7 @@ export interface metronomeState {
 const initialState: metronomeState = {
   isPlaying: false,
   bpm: 120,
-  emphasizeFirstKick: false,
+  emphasizeFirstKick: true,
   rythim: "4/4",
   process: {
     main: 1,

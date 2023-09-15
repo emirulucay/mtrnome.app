@@ -7,10 +7,11 @@ import type { RootState } from "@/app/store";
 import { Howl, Howler } from "howler";
 import { useRef, useEffect, createRef } from "react";
 import cx from "classnames";
+import Checkbox from "@/app/components/Checkbox";
 
 export default function Player() {
   const dispatch = useDispatch();
-  const { isPlaying, bpm, rythim, process } = useSelector((state: RootState) => state.metronomeReducer);
+  const { isPlaying, bpm, rythim, process, emphasizeFirstKick } = useSelector((state: RootState) => state.metronomeReducer);
   const intervalRef = useRef<any>(null);
 
   // const elementsRef = useRef<any>(Array(+rythim[0]).map(() => createRef()));
@@ -39,7 +40,9 @@ export default function Player() {
       const interval = (60 / bpm) * 1000;
       intervalRef.current = setInterval(() => {
         const sound = new Howl({
-          src: ["./audio/sound1.wav"],
+          src: [
+            emphasizeFirstKick && (process.decimal == +rythim[0] || process.decimal == 0) ? "./audio/sound2.mp3" : "./audio/sound1.wav",
+          ],
         });
         sound.play();
         manageProcess();
@@ -87,6 +90,9 @@ export default function Player() {
                 "!w-5 !h-5": +rythim[0] > 5,
               })}></div>
           ))}
+      </div>
+      <div className="mt-8">
+        <Checkbox />
       </div>
     </div>
   );
