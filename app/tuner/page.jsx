@@ -145,7 +145,8 @@ export default function Home() {
               return (
                 <div
                   key={i}
-                  className={cx("bg-[#878787] w-[2px] h-2", {
+                  className={cx("w-[2px] h-2", {
+                    "bg-[#878787]": i % 10 != 0,
                     "!h-4 relative bg-[#C1C1C1]": i % 10 == 0,
                     "!bg-[#3FFF97]" : i % 10 == 0 && i==selected
                   })}>
