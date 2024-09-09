@@ -90,7 +90,7 @@ export default function Home() {
             setNote(closestNote.note);
             setCentsOff(closestNote.cents); // Cents farkını ayarla
             setOrder(closestNote.order);
-            setSelected((closestNote.order*10)+Math.round(centsOff/10))
+            setSelected(closestNote.order * 10 + Math.round(centsOff / 10));
           }
         };
       })
@@ -124,23 +124,26 @@ export default function Home() {
       {frequency && <h2>Tespit Edilen Frekans: {frequency} Hz</h2>}
       {note && (
         <h2>
-          Nota: {note} ({centsOff} cent fark)
-          Order: {order}
+          Nota: {note} ({centsOff} cent fark) Order: {order}
         </h2>
       )}
       {!frequency && !note && <h2>Mikrofon izni verin ve akort işlemi başlasın...</h2>}
-      <div className="w-[800px] flex items-center justify-center relative bg-[#242424] border border-[#353535] overflow-hidden mt-20 py-40 rounded-3xl ">
+      <div className="w-[800px] flex items-center select-none justify-center relative bg-[#242424] border border-[#353535] overflow-hidden mt-20 py-40 rounded-3xl ">
+        <div className="w-24 h-full absolute left-0 bottom-0 bg-gradient-to-r !z-50 from-[#242424]/10 to-transparent"></div>
+        <div className="w-40 h-full absolute right-0 bottom-0 bg-gradient-to-l from-[#242424] to-transparent z-50 "></div>
+        <div className="w-40 h-full absolute left-0 bottom-0 bg-gradient-to-r from-[#242424] to-transparent z-50 "></div>
         <div
-          className="absolute bottom-1/4 left-1/2 w-0 h-0 -translate-x-1/2 
+          className="absolute bottom-1/3 left-1/2 w-0 h-0 -translate-x-1/2 
   border-l-[6px] border-l-transparent
   border-b-[9px] border-b-white
   border-r-[6px] border-r-transparent"></div>
-        <div className="absolute top-1/2 left-0 translate-y-2/3 ml-[460px] transition-all duration-500" style={{
-          left: `calc(-60px * ${order+1})`,
-          transform: `translateX(${-6 * Math.round(centsOff/10)}px)`,
-        }
-          }>
-          <div className="flex items-end gap-1">
+        <div
+          className="absolute top-1/2 left-0 translate-y-2/3 ml-[500px] transition-all duration-500"
+          style={{
+            left: `calc(-100px * ${order + 1})`,
+            transform: `translateX(${-10 * Math.round(centsOff / 10)}px)`,
+          }}>
+          <div className="flex items-end gap-2">
             {[...Array(481)].map((n, i) => {
               return (
                 <div
@@ -148,14 +151,16 @@ export default function Home() {
                   className={cx("w-[2px] h-2", {
                     "bg-[#878787]": i % 10 != 0,
                     "!h-4 relative bg-[#C1C1C1]": i % 10 == 0,
-                    "!bg-[#3FFF97]" : i % 10 == 0 && i==selected
+                    "!bg-[#3FFF97]": i % 10 == 0 && i == selected,
                   })}>
                   <div
-                    className={cx("absolute text-white font-medium bottom-8 transition-all duration-300 text-center -left-0 -translate-x-1/2", {
-                      "!hidden": i % 10 != 0,
-                      "!text-[#3FFF97]": i % 10 == 0 && i==selected
-
-                    })}>
+                    className={cx(
+                      "absolute overflow-hidden text-white font-medium bottom-8 transition-all duration-300 text-center -left-0 -translate-x-1/2",
+                      {
+                        "!hidden": i % 10 != 0,
+                        "!text-[#3FFF97]": i % 10 == 0 && i == selected,
+                      }
+                    )}>
                     {(i + 1) % 10 == 1 ? notes[i / 10]?.note : ""}
                   </div>
                 </div>
