@@ -22,6 +22,7 @@
     "eslint-config-next": "13.4.19",
     "howler": "^2.2.3",
     "next": "13.4.19",
+    "pitchfinder": "^2.3.2",
     "postcss": "8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
